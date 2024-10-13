@@ -9,8 +9,14 @@ const app = express();
 app.use(express.json());
 app.use(cors()); 
 
+// Set the view engine to EJS
+app.set('view engine', 'ejs');
+
+// Set the views directory
+app.set('views', path.join(__data.ejs, 'views'));
 
 dotenv.config();
+
 
 
 const connection = mysql.createConnection({
